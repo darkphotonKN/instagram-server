@@ -31,6 +31,7 @@ export class AuthService {
   }: SignInDTO): Promise<{ user: User; accessToken: string }> {
     // check if user even exists before authenticating
     const user = await this.usersRepo.findOne({ where: { email } });
+
     if (!user) {
       throw new HttpException('User not found', 404);
     }

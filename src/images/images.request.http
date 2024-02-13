@@ -1,0 +1,23 @@
+
+### Get single image
+GET http://localhost:8080/api/images
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgxNjY2NywiZXhwIjoxNzA3ODIwMjY3fQ.Qif6--whcsDDRsP-y89-_b8jW53u9JhrGq9wIlx2hj8
+
+### Get all images
+GET http://localhost:8080/api/image/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgxNjY2NywiZXhwIjoxNzA3ODIwMjY3fQ.Qif6--whcsDDRsP-y89-_b8jW53u9JhrGq9wIlx2hj8
+
+
+### Create an image for a user
+POST http://localhost:8080/api/image/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgxNjY2NywiZXhwIjoxNzA3ODIwMjY3fQ.Qif6--whcsDDRsP-y89-_b8jW53u9JhrGq9wIlx2hj8
+ 
+{
+  "title": "test image 3",
+  "description": "This is test image 3",
+  "url": "https://imgur.com/gallery/BaVcx07"
+}
+
+
+
