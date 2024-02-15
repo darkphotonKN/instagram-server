@@ -1,7 +1,7 @@
 import { User } from 'src/users/entities/user.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity('image')
 export class Image {
   @PrimaryGeneratedColumn()
   id: number;
@@ -15,7 +15,8 @@ export class Image {
   @Column()
   url: string;
 
+  // TODO: add relation
   // relating many images to one user
-  @ManyToOne(() => User, (user) => user.images)
-  user: User;
+  // @ManyToOne(() => User, (user) => user.images)
+  // user: User;
 }

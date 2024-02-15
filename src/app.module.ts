@@ -13,6 +13,7 @@ import { Image } from './images/entities/image.entity';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule], // Import ConfigModule here
       useFactory: async (configService: ConfigService) => ({
@@ -27,8 +28,8 @@ import { Image } from './images/entities/image.entity';
       }),
       inject: [ConfigService], // Inject ConfigService
     }),
-    AuthModule,
     UsersModule,
+    AuthModule,
     ImagesModule,
   ],
   controllers: [AppController],

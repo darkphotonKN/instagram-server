@@ -1,18 +1,18 @@
 ### Get list of users
-GET http://localhost:8080/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoia2l0YWdpcmwyIiwiaWF0IjoxNzA3NjQ0OTM2LCJleHAiOjE3MDc2NDg1MzZ9.W7pvzc8CVXdVplmDdM2G5JPukejHu8xQk57Vsv8a9io
+GET http://localhost:8080/api/user/list
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiS3JhbnRpIiwiaWF0IjoxNzA3OTk0NDQyLCJleHAiOjE3MDc5OTgwNDJ9.nXniLQAzxbqk-ZyoRWh0A-AmLG05D0vOcGGjFRnLDLo
 
 ### Get single user
-GET http://localhost:8080/api/users/user@example.com
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXJuYW1lIjoidXNlcm5hbWUyIiwiaWF0IjoxNzA3NTY1ODE4LCJleHAiOjE3MDc1Njk0MTh9.IasfhkYFijcnDIDtzugz6Afwg79sU5tcYJxr4qxzHlM
+GET http://localhost:8080/api/user/kranti@test.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiS3JhbnRpIiwiaWF0IjoxNzA3OTk0NDQyLCJleHAiOjE3MDc5OTgwNDJ9.nXniLQAzxbqk-ZyoRWh0A-AmLG05D0vOcGGjFRnLDLo
 
 ### Create a new user
-POST http://localhost:8080/api/users/signup
+POST http://localhost:8080/api/user/signup
 Content-Type: application/json
 
 {
-  "name": "user",
-  "email": "user@hilarious.com",
+  "name": "Kranti",
+  "email": "kranti@test.com",
   "password": "123456"
 }
 
@@ -21,8 +21,18 @@ POST http://localhost:8080/api/auth/signin
 Content-Type: application/json
 
 {
-  "email": "user@hilarious.com",
+  "email": "kranti@test.com",
   "password": "123456"
 }
 
+
+### Update User's Profile 
+PATCH http://localhost:8080/api/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgyNjIwMywiZXhwIjoxNzA3ODI5ODAzfQ.N7-PKDjDw64pB6fP0ArVFqUF34FvvEmhf3DLJle8UYs
+
+{
+  "email": "kranti@test.com",
+  "description": "I am a software engineer"
+}
 

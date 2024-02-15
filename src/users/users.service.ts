@@ -1,9 +1,10 @@
 import * as bcrypt from 'bcrypt';
 import { HttpException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Not, Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { CreateUserDTO } from './dtos/create-user.dto';
+import { UpdateProfileDTO } from './dtos/update-profile.dto';
 
 @Injectable()
 export class UsersService {
@@ -11,6 +12,27 @@ export class UsersService {
     // repository injection
     @InjectRepository(User) private usersRepo: Repository<User>,
   ) {}
+
+  // updates a single user's profile
+  async updateUserProfile({
+    email,
+    description,
+    profileImage,
+  }: UpdateProfileDTO): Promise<{ status: number }> {
+    // find the user via email
+    const user = await this.getUser(email);
+    if (typeof user === 'boolean') return;
+    user.description = description ? description : user.description;
+    user.profileImage = profileImage ? profileImage : user.profileImage;
+
+    try {
+      await this.usersRepo.save(user);
+
+      return { status: 200 };
+    } catch (err) {
+      throw new HttpException('Error updating the user to the DB', 404);
+    }
+  }
 
   // gets a single user
   async getUser(email: string, signup?: boolean): Promise<User | boolean> {

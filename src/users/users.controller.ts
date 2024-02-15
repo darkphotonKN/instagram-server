@@ -1,26 +1,49 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Patch,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { AuthGuard } from 'src/guards/auth.guard';
 import { CreateUserDTO } from './dtos/create-user.dto';
+import { UpdateProfileDTO } from './dtos/update-profile.dto';
 
-@Controller('users')
+@Controller('user')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  @Get('/')
+  /*** User Admin API ***/
+
+  // get list of users
+  @Get('/list')
   @UseGuards(AuthGuard)
   getUsers() {
     return this.usersService.getUsers();
   }
 
+  // new user sign up
+  @Post('signup')
+  signup(@Body() body: CreateUserDTO) {
+    return this.usersService.signup(body);
+  }
+
+  /*** User Personal Profile ***/
+
+  // get a single user by email
   @Get('/:email')
   @UseGuards(AuthGuard)
   getUser(@Param('email') email: string) {
     return this.usersService.getUser(email);
   }
 
-  @Post('signup')
-  signup(@Body() body: CreateUserDTO) {
-    return this.usersService.signup(body);
+  // posts user information for user profile
+  @Patch('/profile')
+  @UseGuards(AuthGuard)
+  updateUserProfile(@Body() body: UpdateProfileDTO) {
+    return this.usersService.updateUserProfile(body);
   }
 }

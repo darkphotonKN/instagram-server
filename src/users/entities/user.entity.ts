@@ -8,7 +8,7 @@ import {
   OneToMany,
 } from 'typeorm';
 
-@Entity()
+@Entity('user')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -16,23 +16,42 @@ export class User {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
   password: string;
 
-  // list of followers
-  @ManyToMany(() => User, (user) => user.following)
-  @JoinTable()
-  followers: User[];
+  // user personal description
+  @Column({ default: '' })
+  description: string;
 
-  // list of following
-  @ManyToMany(() => User, (user) => user.followers)
-  @JoinTable()
-  following: User[];
+  // profile pic
+  @Column({ nullable: true })
+  profileImage: string;
 
-  // list of posted images
-  @OneToMany(() => Image, (image) => image.user)
-  images: Image[];
+  // TEMP: without relation
+  @Column({ default: 237 })
+  followers: number;
+
+  @Column({ default: 102 })
+  following: number;
+
+  @Column('text', { array: true, nullable: true })
+  images: string[];
+
+  // TODO: with relation
+  // // list of followers
+  // @ManyToMany(() => User, (user) => user.following)
+  // @JoinTable()
+  // followers: User[] = [];
+
+  // // list of following
+  // @ManyToMany(() => User, (user) => user.followers)
+  // @JoinTable()
+  // following: User[] = [];
+
+  // // list of posted images
+  // @OneToMany(() => Image, (image) => image.user)
+  // images: Image[] = [];
 }
