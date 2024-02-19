@@ -1,6 +1,6 @@
 ### Get list of users
 GET http://localhost:8080/api/user/list
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiS3JhbnRpIiwiaWF0IjoxNzA3OTk0NDQyLCJleHAiOjE3MDc5OTgwNDJ9.nXniLQAzxbqk-ZyoRWh0A-AmLG05D0vOcGGjFRnLDLo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiS3JhbnRpIiwiaWF0IjoxNzA4MzQzMTMwLCJleHAiOjE3MDgzNDY3MzB9.VhzbQwAWByHTiP38QAxuL6ArgFkHT4116C6BcMuZtGY
 
 ### Get single user
 GET http://localhost:8080/api/user/kranti@test.com
@@ -29,10 +29,10 @@ Content-Type: application/json
 ### Update User's Profile 
 PATCH http://localhost:8080/api/user/profile
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgyNjIwMywiZXhwIjoxNzA3ODI5ODAzfQ.N7-PKDjDw64pB6fP0ArVFqUF34FvvEmhf3DLJle8UYs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiS3JhbnRpIiwiaWF0IjoxNzA4MzQzMTMwLCJleHAiOjE3MDgzNDY3MzB9.VhzbQwAWByHTiP38QAxuL6ArgFkHT4116C6BcMuZtGY
 
 {
   "email": "kranti@test.com",
-  "description": "I am a software engineer"
+  "description": "I am a LEAD software engineer"
 }
 

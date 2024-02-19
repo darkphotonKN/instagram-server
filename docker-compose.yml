@@ -3,9 +3,9 @@ services:
   # PostgreSQL DB service
   postgres:
     image: postgres:latest
-    container_name: postgres-db
+    container_name: ig-clone-postgres-db
     environment:
-      POSTGRES_DB: UBER-DB
+      POSTGRES_DB: IG-CLONE-DB
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     ports:
