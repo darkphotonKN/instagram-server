@@ -1,18 +1,18 @@
 
 ### Get all images
 GET http://localhost:8080/api/image/list
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgxNjY2NywiZXhwIjoxNzA3ODIwMjY3fQ.Qif6--whcsDDRsP-y89-_b8jW53u9JhrGq9wIlx2hj8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidGVkeXkgYmVhciIsImlhdCI6MTcwODQzOTQ0NywiZXhwIjoxNzA4NDQzMDQ3fQ.C2np0hu012rSvh5xTIjXokWLjNcrXKd6l3s1gGBE454
 
 
 ### Create an image for a user
 POST http://localhost:8080/api/image/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoidXNlciIsImlhdCI6MTcwNzgxNjY2NywiZXhwIjoxNzA3ODIwMjY3fQ.Qif6--whcsDDRsP-y89-_b8jW53u9JhrGq9wIlx2hj8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidGVkeXkgYmVhciIsImlhdCI6MTcwODQzOTQ0NywiZXhwIjoxNzA4NDQzMDQ3fQ.C2np0hu012rSvh5xTIjXokWLjNcrXKd6l3s1gGBE454
  
 {
-  "title": "test image 3",
-  "description": "This is test image 3",
-  "url": "https://imgur.com/gallery/BaVcx07"
+  "title": "my cat",
+  "description": "My new cat!!",
+  "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png"
 }
 
 
