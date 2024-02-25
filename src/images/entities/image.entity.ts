@@ -17,6 +17,6 @@ export class Image {
 
   // TODO: add relation
   // relating many images to one user
-  // @ManyToOne(() => User, (user) => user.images)
-  // user: User;
+  @ManyToOne(() => User, (user) => user.images)
+  user: User;
 }

@@ -1,10 +1,10 @@
 ### Get list of users
 GET http://localhost:8080/api/user/list
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoicGF3c2NoZW1lb3cxMjMiLCJpYXQiOjE3MDg0NDAwNDAsImV4cCI6MTcwODQ0MzY0MH0.nLGh2qOifAaZoyXqBeXRnmYpJGNQiCLM-QCUrHrup64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoicGF3c2NoZW1lb3cxMjMiLCJpYXQiOjE3MDg4NjQ3NDksImV4cCI6MTcwODg2ODM0OX0.YDcajpaU0INv72HaZi97xa6MTkkbyFwhuTjT0Ww3pPs
 
 ### Get single user
 GET http://localhost:8080/api/user/paw@paws.com
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoidGVkeXkgYmVhciIsImlhdCI6MTcwODQzOTQ0NywiZXhwIjoxNzA4NDQzMDQ3fQ.C2np0hu012rSvh5xTIjXokWLjNcrXKd6l3s1gGBE454
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoicGF3c2NoZW1lb3cxMjMiLCJpYXQiOjE3MDg4NjQ3NDksImV4cCI6MTcwODg2ODM0OX0.YDcajpaU0INv72HaZi97xa6MTkkbyFwhuTjT0Ww3pPs
 
 ### Create a new user
 POST http://localhost:8080/api/user/signup
@@ -35,4 +35,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuY
   "email": "teddybear@test.com",
   "description": "I am furry nobody *sad*"
 }
+
+### Follow another user 
+GET http://localhost:8080/api/user/follow/teddybear@test.com
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInVzZXJuYW1lIjoicGF3c2NoZW1lb3cxMjMiLCJpYXQiOjE3MDg4NjQ3NDksImV4cCI6MTcwODg2ODM0OX0.YDcajpaU0INv72HaZi97xa6MTkkbyFwhuTjT0Ww3pPs
 

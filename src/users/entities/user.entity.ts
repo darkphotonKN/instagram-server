@@ -31,27 +31,27 @@ export class User {
   profileImage: string;
 
   // TEMP: without relation
-  @Column({ default: 237 })
-  followers: number;
+  // @Column({ default: 237 })
+  // followers: number;
 
-  @Column({ default: 102 })
-  following: number;
+  // @Column({ default: 102 })
+  // following: number;
 
-  @Column('text', { array: true, nullable: true })
-  images: string[];
+  // @Column('text', { array: true, nullable: true })
+  // images: string[];
 
   // TODO: with relation
   // // list of followers
-  // @ManyToMany(() => User, (user) => user.following)
-  // @JoinTable()
-  // followers: User[] = [];
+  @ManyToMany(() => User, (user) => user.following)
+  @JoinTable()
+  followers: User[];
 
   // // list of following
-  // @ManyToMany(() => User, (user) => user.followers)
-  // @JoinTable()
-  // following: User[] = [];
+  @ManyToMany(() => User, (user) => user.followers)
+  @JoinTable()
+  following: User[];
 
   // // list of posted images
-  // @OneToMany(() => Image, (image) => image.user)
-  // images: Image[] = [];
+  @OneToMany(() => Image, (image) => image.user)
+  images: Image[];
 }

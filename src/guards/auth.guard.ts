@@ -24,7 +24,8 @@ export class AuthGuard implements CanActivate {
       });
       // assigning payload of verified token to request object
       // so that we can access it in our route handlers
-      request['user'] = payload;
+      // in this case, we are creating an object with user's id
+      request['user'] = { userId: payload.sub };
     } catch {
       // jwt decryption failed, so throw an unauthorized exception
       throw new UnauthorizedException();

@@ -5,6 +5,7 @@ import {
   Param,
   Patch,
   Post,
+  Req,
   UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
@@ -45,5 +46,15 @@ export class UsersController {
   @UseGuards(AuthGuard)
   updateUserProfile(@Body() body: UpdateProfileDTO) {
     return this.usersService.updateUserProfile(body);
+  }
+
+  /*** Follow & Following */
+
+  // follow a user via their email as id
+  @Get('/follow/:email')
+  @UseGuards(AuthGuard)
+  followUser(@Param('email') email: string, @Req() request: any) {
+    const { userId } = request.user;
+    return this.usersService.followUser(userId, email);
   }
 }
