@@ -111,7 +111,7 @@ export class UsersService {
 
   // allows one user to follow another user via their email
   async followUser(id: string, email: string) {
-    let updateMessage: String;
+    let updateMessage: string;
 
     // retrieve our user
     const user = await this.getUserWithId(id);
